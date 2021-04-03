@@ -1,0 +1,13 @@
+Options All -Indexes
+
+RewriteEngine On
+RewriteRule ^([-a-zA-Z0-9/]+)$ index.php?pag=$1
+
+#El siguiente código evita que tu archivo .htaccess puedan ser leído directamente desde el navegador web.
+
+<Files .htaccess>
+Order allow,deny
+Deny from all
+</Files>
+
+# denegar acceso a robots maliciosos, extractores de webs y navegadores offline
